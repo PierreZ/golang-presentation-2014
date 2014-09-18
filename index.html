@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Meet Golang</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+	<meta name="author" content="Hakim El Hattab">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if( window.location.search.match( /print-pdf/gi ) ) {
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		}
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Présentation Golang</h1>
+					<img src="img/gopher_vertical.png" style="background:none;height:200px;border:0;-moz-box-shadow:none;-webkit-box-shadow:none;">
+					<p>
+						<small>Créé par<br/><a href="http://pierrezemb.fr">Pierre Zemb</a></small>
+						
+					</p>
+					<p><small><br/>Les slides sont disponibles sur <a href="http://slides.pierrezemb.fr">slides.pierrezemb.fr</a></small></p>
+				</section>
+				<section>
+					<h2>+Me</h2>
+					<div style="text-align=center;">
+						<img class="image" src="img/myself.png" style="width: 300px; height: auto; max-height: none; max-width: none; border: none;-moz-box-shadow:none;-webkit-box-shadow:none;background:none;">
+					</div>
+					<p>
+						<ul>
+							<li>Etudiant en Cycle informatique et Réseaux à l'ISEN Brest</li>
+							<li>Jeune stagiaire en alternance au Crédit Mutuel Arkéa</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Les origines de Go</h2>
+						<p>Langage porté par :</p>
+						<ul>
+							<li>Ken Thompson</li>
+							<li>Rob Pike</li>
+							<li>Robert Griesemer</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Les problématiques du développeur logiciel</h2>
+						<ul>
+							<li>langages interprétés != performance</li>
+							<li>langages compilés != simplicité de la syntaxe</li>
+						</ul>
+						<p><br/><img class="image" src="img/compiling.png"></p>
+					</section>
+					<section>
+						<h2>Les problématiques du développeur logiciel</h2>
+						<p>Le développement logiciel doit et devrait être simple<br/></p>
+						<ul>
+							<li>Simple à lire/écrire</li>
+							<li>Cohérent</li>
+							<li>Robuste</li>
+							<li>Intuitif</li>
+						</ul>
+
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Mais le Go c'est quoi ?</h2>
+
+						<ul>
+							<li>Langage compilé et typé</li>
+							<li>Inspiré du C/C++</li>
+							<li>Possède un Garbage Collector</li>
+							<li>Syntaxe claire</li>
+							<li>Open-Source</li>
+							<li>Bibliothèque standard très riche</li>
+							<li>En version 1.2 depuis Décembre 2013</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Fonctionnalités clés</h2>
+						<ul>
+							<li>Compilation extrèmement rapide</li>
+							<li>Faible empreinte mémoire</li>
+							<li>Pensé pour de la concurrence !</li>
+							<li>Moins de lignes de code en moins de temps</li>
+							<li>Multi-plateformes</li>
+						</ul>
+						<p><br/></p>
+						<blockquote>Go = Easy like Python + Efficient like C++ + Fast compilation</blockquote>
+
+					</section>
+
+					<section>
+						<h2>Qui utilise Go ?</h2>
+						<ul>
+							<li>Couchbase (interface de requêtage pour N1QL)</li>
+							<li>CloudFlare (Service de DNS distribué)</li>
+							<li>SoundCloud (douzaines de features écrites en Go)</li>
+							<li>Iron.io (Remplacement du Ruby/Groovy par du Go)</li>
+							<li>Google (dl.google.com et une partie de Youtube)</li>
+							<li>Docker (automatisation des containers Linux)</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<h2>Petit tour d'horizon du langage</h2>
+					<img class="image" src="img/cat.gif" style="width: 300px; height: auto; max-height: none; max-width: none; border: none;-moz-box-shadow:none;-webkit-box-shadow:none;background:none;">
+
+				</section>
+
+				<section>
+					<section>
+						<h3>Hello World</h3>
+						<pre style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+							<code>
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, 世界")
+}
+						</code>
+					</pre>
+					<pre style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+						<code>
+Hello, 世界
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>To run it</h3>
+					<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+						<code>
+go build hello.go
+						</code>
+					</pre>
+					<p>Or</p>
+					<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+						<code>
+go run hello.go
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Functions</h3>
+					<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+						<code>
+package main
+
+import "fmt"
+
+func add(x int, y int) int {
+	return x + y
+}
+
+func main() {
+	fmt.Println(add(42, 13))
+}
+				</code>
+			</pre>
+			<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+				<code>
+55
+				</code>
+			</pre>
+		</section>
+		<section>
+			<h3>Functions</h3>
+			<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+				<code>
+package main
+
+import "fmt"
+
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+func main() {
+	a, b := swap("hello", "world")
+	fmt.Println(a, b)
+}
+		</code>
+	</pre>
+	<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+world hello
+		</code>
+	</pre>
+</section>
+<section>
+	<h3>Functions</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+
+import "fmt"
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
+func main() {
+	fmt.Println(split(17))
+}
+</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+7 10
+	</code>
+</pre>
+</section>
+
+</section>
+
+<section>
+	<section>
+		<h3>Variables</h3>
+		<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+			<code>
+package main
+
+import "fmt"
+
+const Pi = 3.14
+
+func main() {
+	var i, j int = 1, 2
+	k := 3
+	c, python, java := true, false, "no!"
+
+	fmt.Println(i, j, k, c, python, java, Pi)
+}
+		</code>
+	</pre>
+	<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+1 2 3 true false no! 3.14
+		</code>
+	</pre>
+</section>
+<section>
+	<h3>Types</h3>
+	<ul>
+		<li>string</li>
+		<li>int, int8, int16, int32, int64</li>
+		<li>uint, uint8, uint16, uint32, uint64, uintptr</li>
+		<li>Byte</li>
+		<li>rune(alias for int32,represents a Unicode code point)</li>
+		<li>float32, float64</li>
+		<li>complex64 complex128</li>
+	</ul>
+</section>
+<section>
+	<h3>Type conversions</h3>
+	<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+i := 42
+f := float64(i)
+u := uint(f)
+		</code>
+	</pre>
+</section>
+<section>
+	<h3>Structures</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+			<code>
+package main
+
+import "fmt"
+
+type Vertex struct {
+    X int
+    Y int
+}
+
+func main() {
+    p := Vertex{1, 2}
+    q := &p
+    q.X = 1e9
+    fmt.Println(p)
+}
+		</code>
+	</pre>
+	<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+{1000000000 2}
+		</code>
+	</pre>
+</section>
+<section>
+	<h3>Mais il y a aussi :</h3>
+	<ul>
+		<li>Des tableaux<ul><li>statiques</li><li>dynamiques (slices)</li></ul></li>
+		<li>Des maps</li>
+		<li>Des méthodes pour structures</li>
+		<li>Des pointeurs</li>
+		<li>...</li>
+	</ul>
+</section>
+</section>
+
+<section>
+	<section>
+		<h3>Boucle</h3>
+		<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+			<code>
+package main
+
+import "fmt"
+
+func main() {
+	sum := 0
+	for i := 0; i < 10; i++ {
+		sum += i
+		}
+	fmt.Println(sum)
+}
+	</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+45
+	</code>
+</pre>
+</section>
+<section>
+	<h3>While?</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+
+import "fmt"
+
+func main() {
+	sum := 1
+	for sum < 1000 {
+		sum += sum
+	}
+	fmt.Println(sum)
+}
+</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+1024
+	</code>
+</pre>
+</section>
+<section>
+	<h3>Boucle infinie</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+
+func main() {
+	for {
+	}
+}
+</code>
+</pre>
+</section>
+</section>
+<section>
+<section>
+	<h3>Condition</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+import (
+    "fmt"
+    "math"
+)
+
+func sqrt(x float64) string {
+    if x < 0 {
+        return sqrt(-x) + "i"
+    }
+    return fmt.Sprint(math.Sqrt(x))
+}
+func main() {
+    fmt.Println(sqrt(2), sqrt(-4))
+}
+</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+1.4142135623730951 2i
+	</code>
+</pre>
+</section>
+<section>
+	<h3>Switch</h3>
+	<pre  style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+import (
+    "fmt"
+    "runtime"
+)
+
+func main() {
+    fmt.Print("Go runs on ")
+    switch os := runtime.GOOS; os {
+    case "darwin":
+        fmt.Println("OS X.")
+    case "linux":
+        fmt.Println("Linux.")
+    default:
+        // freebsd, openbsd, plan9, windows...
+        fmt.Printf("%s.", os)
+    }
+}
+</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+Go runs on Linux.
+	</code>
+</pre>
+</section>
+
+</section>
+<section>
+	<h3>Goroutines</h3>
+		<pre  style="height:auto;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+import (
+    "fmt"
+    "time"
+)
+func say(s string) {
+    for i := 0; i < 3; i++ {
+        time.Sleep(100 * time.Millisecond)
+        fmt.Println(s)
+    }
+}
+
+func main() {
+    go say("world")
+    say("hello")
+}
+</code>
+</pre>
+<pre  style="text-align:center;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+	<code>
+hello
+world
+hello
+world
+hello
+	</code>
+</pre>
+</section>
+
+<section>
+	<h3>Exemple: serveur Web</h3>
+		<pre  style="height:auto;-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;">
+		<code>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+type Hello struct{}
+
+func (h Hello) ServeHTTP(
+    w http.ResponseWriter,
+    r *http.Request) {
+    fmt.Fprint(w, "Hello!")
+}
+
+func main() {
+    var h Hello
+    http.ListenAndServe("localhost:4000", h)
+}
+</code>
+</pre>
+
+</section>
+
+
+<section>
+	<h2>Ressources</h2>
+	<ul>
+		<li><a href="http://tour.golang.org/#1">A Tour of Go</a></li>
+		<li><a href="https://www.youtube.com/watch?v=DXMYZLMHfqI">[DevFest Nantes] Go & AppEngine</a></li>
+		<li><a href="http://vimeo.com/69237265">Andrew Gerrand - Go: a simple programming environment</a></li>
+		<li><a href="http://learnxinyminutes.com/docs/go/">Learn Go in Y minutes</a></li>
+		<li><a href="http://steveperkins.net/go-for-java-programmers-introduction/?utm_source=rss&utm_medium=rss&utm_campaign=go-for-java-programmers-introduction">Learning Go as a Java Programmer</a></li>
+		<li><a href="http://blog.golang.org/gos-declaration-syntax">Go's Declaration Syntax</a></li>
+	</ul>
+	
+	
+	
+	
+</section>
+
+<section>
+	<h1>Fin !</h1>
+	<h2>Avez-vous des questions ?</h2>
+	<h3>Par Pierre Zemb</h3>
+</section>
+
+
+</div>
+
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+
+<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+</body>
+</html>
